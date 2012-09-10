@@ -31,6 +31,8 @@
 		60E1F21C15FD943C00581240 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		60E1F21E15FD943C00581240 /* ACViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ACViewController.h; sourceTree = "<group>"; };
 		60E1F21F15FD943C00581240 /* ACViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ACViewController.m; sourceTree = "<group>"; };
+		60E1F25C15FDBBAB00581240 /* JSONKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
+		60E1F25D15FDBBAB00581240 /* JSONKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,8 @@
 		60E1F20F15FD943C00581240 /* Feedback */ = {
 			isa = PBXGroup;
 			children = (
+				60E1F25C15FDBBAB00581240 /* JSONKit.h */,
+				60E1F25D15FDBBAB00581240 /* JSONKit.m */,
 				60E1F21815FD943C00581240 /* ACAppDelegate.h */,
 				60E1F21915FD943C00581240 /* ACAppDelegate.m */,
 				60E1F21B15FD943C00581240 /* MainStoryboard.storyboard */,
@@ -280,6 +284,7 @@
 				60E1F22515FD943C00581240 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
