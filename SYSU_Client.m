@@ -92,12 +92,12 @@
 }
 
 
--(NSString *)SchoolArea:(NSString *)area Blocks:(NSString *)block content:(NSString *)content
+-(NSString *)SchoolArea:(NSString *)area Blocks:(NSString *)block head:(NSString *)head content:(NSString *)content
 {
     NSURL *url = [NSURL URLWithString:@"http://202.116.65.120/bbs/interface.php?action=releaseThread"];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     
-    NSString *params = [[NSString alloc] initWithFormat:@"type=%@&fid=%@&message=%@", area, block,content];
+    NSString *params = [[NSString alloc] initWithFormat:@"type=%@&fid=%@&subject=%@&message=%@", area, block, head, content];
     [request setHTTPMethod:@"POST"];
     [request setHTTPBody:[params dataUsingEncoding:NSUTF8StringEncoding]];
     
