@@ -6,7 +6,7 @@
 //  Copyright (c) 2012年 Apple Club. All rights reserved.
 //
 
-//test Yanyu
+
 
 #import <UIKit/UIKit.h>
 
