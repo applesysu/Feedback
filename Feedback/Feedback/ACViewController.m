@@ -7,6 +7,7 @@
 //
 
 #import "ACViewController.h"
+#import "ACTestObj.h"
 
 @interface ACViewController ()
 
@@ -18,6 +19,8 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    ACTestObj *obj = [[ACTestObj alloc] init];
+    [obj printfHello];
 }
 
 - (void)viewDidUnload
