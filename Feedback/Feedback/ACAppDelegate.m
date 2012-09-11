@@ -9,6 +9,7 @@
 #import "ACAppDelegate.h"
 
 @implementation ACAppDelegate
+@synthesize window = _window;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {

@@ -17,6 +17,7 @@
 		60E1F21A15FD943C00581240 /* ACAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E1F21915FD943C00581240 /* ACAppDelegate.m */; };
 		60E1F21D15FD943C00581240 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60E1F21B15FD943C00581240 /* MainStoryboard.storyboard */; };
 		60E1F22015FD943C00581240 /* ACViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E1F21F15FD943C00581240 /* ACViewController.m */; };
+		A41360DE15FF0C0900D0648A /* MyPagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A41360DD15FF0C0900D0648A /* MyPagesViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,8 @@
 		60E1F21C15FD943C00581240 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		60E1F21E15FD943C00581240 /* ACViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ACViewController.h; sourceTree = "<group>"; };
 		60E1F21F15FD943C00581240 /* ACViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ACViewController.m; sourceTree = "<group>"; };
+		A41360DC15FF0C0900D0648A /* MyPagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyPagesViewController.h; sourceTree = "<group>"; };
+		A41360DD15FF0C0900D0648A /* MyPagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyPagesViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +86,7 @@
 		60E1F20F15FD943C00581240 /* Feedback */ = {
 			isa = PBXGroup;
 			children = (
+				A41360DA15FF0BF400D0648A /* MyPages */,
 				5F4D46A815FE128D00C38660 /* JSONKit.h */,
 				5F4D46A915FE128D00C38660 /* JSONKit.m */,
 				5F4D46AA15FE128D00C38660 /* SYSU_Client.h */,
@@ -106,6 +110,15 @@
 				60E1F21715FD943C00581240 /* Feedback-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A41360DA15FF0BF400D0648A /* MyPages */ = {
+			isa = PBXGroup;
+			children = (
+				A41360DC15FF0C0900D0648A /* MyPagesViewController.h */,
+				A41360DD15FF0C0900D0648A /* MyPagesViewController.m */,
+			);
+			name = MyPages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,6 +190,7 @@
 				60E1F22015FD943C00581240 /* ACViewController.m in Sources */,
 				5F4D46AC15FE128D00C38660 /* JSONKit.m in Sources */,
 				5F4D46AD15FE128D00C38660 /* SYSU_Client.m in Sources */,
+				A41360DE15FF0C0900D0648A /* MyPagesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
