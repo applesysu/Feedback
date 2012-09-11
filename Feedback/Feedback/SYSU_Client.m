@@ -5,7 +5,11 @@
 //  Created by 王 瑞 on 12-9-6.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 //  Copyright (c) 2012年 王 瑞. All rights reserved.
+=======
+//  Copyright (c) 2012年 Apple Club. All rights reserved.
+>>>>>>> Dev
 =======
 //  Copyright (c) 2012年 Apple Club. All rights reserved.
 >>>>>>> Dev
@@ -21,9 +25,12 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 -(NSDictionary *)LoginName:(NSString *)name LoginPass:(NSString *)password{
     //使用的是DEMO
 =======
+=======
+>>>>>>> Dev
 =======
 >>>>>>> Dev
 /*
@@ -35,6 +42,9 @@
 -(NSDictionary *)LoginName:(NSString *)name LoginPass:(NSString *)password{
     //使用的是正式板块
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> Dev
+=======
 >>>>>>> Dev
 =======
 >>>>>>> Dev
@@ -56,11 +66,14 @@
     returnjson=[responseData objectFromJSONData];
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 //    NSLog(@"%d",returnjson.count);
     return returnjson;
 }
 
 =======
+=======
+>>>>>>> Dev
 =======
 >>>>>>> Dev
 
@@ -74,6 +87,9 @@
  
  */
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> Dev
+=======
 >>>>>>> Dev
 =======
 >>>>>>> Dev
@@ -94,6 +110,7 @@
 
     returnArray=[responseData  mutableObjectFromJSONData];
     
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 //    NSLog(@"%d",returnArray.count);
@@ -120,6 +137,8 @@
 //    return returnArray;
 //}
 =======
+=======
+>>>>>>> Dev
 =======
 >>>>>>> Dev
     return returnArray;
@@ -154,6 +173,9 @@
     方法：同步POST
  */
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> Dev
+=======
 >>>>>>> Dev
 =======
 >>>>>>> Dev
@@ -171,8 +193,12 @@
     NSData *responseData=[NSURLConnection sendSynchronousRequest:request returningResponse:&urlResponse error:&error];
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 //    NSString *str=[[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
 //    NSLog(@"%@",str);
+=======
+
+>>>>>>> Dev
 =======
 
 >>>>>>> Dev
@@ -185,8 +211,11 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
+=======
+>>>>>>> Dev
 =======
 >>>>>>> Dev
 /*
@@ -196,6 +225,9 @@
  
  */
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> Dev
+=======
 >>>>>>> Dev
 =======
 >>>>>>> Dev
@@ -220,6 +252,7 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 //#pragma mark- Delegate
 //-(void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response{
@@ -233,6 +266,8 @@
 ////    str1=str1;
 ////    NSLog(@"%@",str);
 //}
+=======
+>>>>>>> Dev
 =======
 >>>>>>> Dev
 =======
