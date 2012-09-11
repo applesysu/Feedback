@@ -3,7 +3,11 @@
 //  SYSU_network_Demo_Login
 //
 //  Created by 王 瑞 on 12-9-6.
+<<<<<<< HEAD
 //  Copyright (c) 2012年 王 瑞. All rights reserved.
+=======
+//  Copyright (c) 2012年  Apple Club. All rights reserved.
+>>>>>>> Dev
 //
 
 // branch
