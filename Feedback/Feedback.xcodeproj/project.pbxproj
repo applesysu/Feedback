@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		60BBF17F15FF0BE100E6E535 /* ACTestObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 60BBF17E15FF0BE100E6E535 /* ACTestObj.m */; };
 		60E1F20A15FD943C00581240 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60E1F20915FD943C00581240 /* UIKit.framework */; };
 		60E1F20C15FD943C00581240 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60E1F20B15FD943C00581240 /* Foundation.framework */; };
 		60E1F20E15FD943C00581240 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60E1F20D15FD943C00581240 /* CoreGraphics.framework */; };
@@ -18,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		60BBF17D15FF0BE100E6E535 /* ACTestObj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACTestObj.h; sourceTree = "<group>"; };
+		60BBF17E15FF0BE100E6E535 /* ACTestObj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACTestObj.m; sourceTree = "<group>"; };
 		60E1F20515FD943C00581240 /* Feedback.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Feedback.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60E1F20915FD943C00581240 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		60E1F20B15FD943C00581240 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -84,6 +87,8 @@
 				60E1F21815FD943C00581240 /* ACAppDelegate.h */,
 				60E1F21915FD943C00581240 /* ACAppDelegate.m */,
 				60E1F21B15FD943C00581240 /* MainStoryboard.storyboard */,
+				60BBF17D15FF0BE100E6E535 /* ACTestObj.h */,
+				60BBF17E15FF0BE100E6E535 /* ACTestObj.m */,
 				60E1F21E15FD943C00581240 /* ACViewController.h */,
 				60E1F21F15FD943C00581240 /* ACViewController.m */,
 				60E1F21015FD943C00581240 /* Supporting Files */,
@@ -169,6 +174,7 @@
 				60E1F21615FD943C00581240 /* main.m in Sources */,
 				60E1F21A15FD943C00581240 /* ACAppDelegate.m in Sources */,
 				60E1F22015FD943C00581240 /* ACViewController.m in Sources */,
+				60BBF17F15FF0BE100E6E535 /* ACTestObj.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

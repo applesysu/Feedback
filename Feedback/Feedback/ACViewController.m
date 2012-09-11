@@ -5,9 +5,10 @@
 //  Created by Jacob Pan on 12-9-10.
 //  Copyright (c) 2012年 Apple Club. All rights reserved.
 //
-// SHit Shit
+// SHit Shitc	
 
 #import "ACViewController.h"
+#import "ACTestObj.h"
 
 @interface ACViewController ()
 
@@ -19,6 +20,8 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    ACTestObj *obj = [[ACTestObj alloc] init];
+    [obj printfHello];
 }
 
 - (void)viewDidUnload
