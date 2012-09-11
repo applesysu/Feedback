@@ -32,12 +32,19 @@
     idList=[[NSMutableArray alloc] init];
     returnDir=[[NSDictionary alloc] init];
     client=[[SYSU_Client alloc] init];
-    // 发送请求取得数组
-    returnList=[client TidNum:@"6527"];
-    // 第0个dir储存的就是楼主帖子信息
-    returnDir=[returnList objectAtIndex:0];
-    // 再把该dir加入要显示数据的list中
-    [listData addObject:returnDir];
+    //从userdefault中取得发过的帖子的id
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    idList=[userDefaults objectForKey:@""];
+    for(int i=0;i<[idList count];i++)
+        {
+            NSString *tid=[idList objectAtIndex:i];
+            // 发送请求取得数组
+            returnList=[client TidNum:tid];
+            // 第0个dir储存的就是楼主帖子信息
+            returnDir=[returnList objectAtIndex:0];
+            // 再把该dir加入要显示数据的list中
+            [listData addObject:returnDir];
+        }
 }
 
 - (void)viewDidUnload
