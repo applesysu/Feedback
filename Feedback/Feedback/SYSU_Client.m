@@ -3,36 +3,15 @@
 //  SYSU_network_Demo_Login
 //
 //  Created by 王 瑞 on 12-9-6.
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-//  Copyright (c) 2012年 王 瑞. All rights reserved.
-=======
 //  Copyright (c) 2012年 Apple Club. All rights reserved.
->>>>>>> Dev
-=======
-//  Copyright (c) 2012年 Apple Club. All rights reserved.
->>>>>>> Dev
-=======
-//  Copyright (c) 2012年 Apple Club. All rights reserved.
->>>>>>> Dev
 //
 
 #import "SYSU_Client.h"
 #import "JSONkit.h"
+#import "SYSU_Chardeal.h"
 
 @implementation SYSU_Client
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
--(NSDictionary *)LoginName:(NSString *)name LoginPass:(NSString *)password{
-    //使用的是DEMO
-=======
-=======
->>>>>>> Dev
-=======
->>>>>>> Dev
 /*
   登陆函数：参数为用户名和密码
   返回用户信息的Dictionary，内容包括：邮箱，是否为管理员，是否为学生，用户名，uid；
@@ -41,13 +20,6 @@
 
 -(NSDictionary *)LoginName:(NSString *)name LoginPass:(NSString *)password{
     //使用的是正式板块
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> Dev
-=======
->>>>>>> Dev
-=======
->>>>>>> Dev
     NSURL *url=[NSURL URLWithString:@"http://202.116.65.120/bbs/interface.php?action=login"];
     NSMutableURLRequest *request=[NSMutableURLRequest requestWithURL:url];
     //初始化参数
@@ -64,18 +36,6 @@
     NSDictionary *returnjson=[[NSDictionary alloc] init];
     //使用json库（如果JSON里有数组，就用mutableObjectFromJSONData，返回array；负责使用objectFromJSONData，返回dictionary）
     returnjson=[responseData objectFromJSONData];
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-//    NSLog(@"%d",returnjson.count);
-    return returnjson;
-}
-
-=======
-=======
->>>>>>> Dev
-=======
->>>>>>> Dev
 
     return returnjson;
 }
@@ -86,13 +46,6 @@
     方法：同步POST
  
  */
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> Dev
-=======
->>>>>>> Dev
-=======
->>>>>>> Dev
 -(NSArray *)FidNum:(NSString *)num Page:(NSString *)page NumPerPage:(NSString *)numPerPage{
     NSURL *url=[NSURL URLWithString:@"http://202.116.65.120/bbs/interface.php?action=getThreads"];
     NSMutableURLRequest *request=[NSMutableURLRequest requestWithURL:url];
@@ -110,37 +63,6 @@
 
     returnArray=[responseData  mutableObjectFromJSONData];
     
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-//    NSLog(@"%d",returnArray.count);
-    return returnArray;
-}
-
-
-//-(NSArray *)TidNum:(NSString *)num{
-//    NSURL *url=[NSURL URLWithString:@"http://202.116.65.120/bbs/interface.php?action=viewThread"];
-//    NSMutableURLRequest *request=[NSMutableURLRequest requestWithURL:url];
-//    
-//    NSString *params=[[NSString alloc] initWithFormat:@"tid=%@",num];
-//    [request setHTTPMethod:@"POST"];
-//    [request setHTTPBody:[params dataUsingEncoding:NSUTF8StringEncoding]];
-//    NSHTTPURLResponse *urlResponse=nil;
-//    NSError *error=[[NSError alloc] init];
-//    NSData *responseData=[NSURLConnection sendSynchronousRequest:request returningResponse:&urlResponse error:&error];
-//    NSString *str=[[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
-//    NSLog(@"%@",str);
-//    
-//    NSArray *returnArray=[responseData mutableObjectFromJSONData];
-//  
-//   NSLog(@"LL%d",returnArray.count);
-//    return returnArray;
-//}
-=======
-=======
->>>>>>> Dev
-=======
->>>>>>> Dev
     return returnArray;
 }
 
@@ -159,28 +81,19 @@
     NSHTTPURLResponse *urlResponse=nil;
     NSError *error=[[NSError alloc] init];
     NSData *responseData=[NSURLConnection sendSynchronousRequest:request returningResponse:&urlResponse error:&error];
-    NSMutableString *str=[[NSMutableString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
-    [str deleteCharactersInRange:[str rangeOfString:@"\n\n\n\n"]];
-    NSRange  range=NSMakeRange(0, [str length]);
-    [str replaceOccurrencesOfString:@"\r\n" withString:@"" options:NSLiteralSearch range:range];
-    responseData=[str dataUsingEncoding:NSUTF8StringEncoding];
-        NSArray *returnArray=[responseData mutableObjectFromJSONData];
+    responseData=[[[SYSU_Chardeal alloc] init] DealWithChar:responseData];
+    
+    NSArray *returnArray=[responseData mutableObjectFromJSONData];
+    NSLog(@"%d",returnArray.count);
     return returnArray;
 }
 /*
     回帖函数：参数为版块代号，帖子代号，回帖内容
-    返回-1，代表回帖失败，返回其它正值代表成功
+    返回0，代表回帖失败，返回1,代表成功
     方法：同步POST
  */
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> Dev
-=======
->>>>>>> Dev
-=======
->>>>>>> Dev
 
--(void)FidNum:(NSString *)num TidNum:(NSString *)tnum content:(NSString *)content{
+-(NSInteger)FidNum:(NSString *)num TidNum:(NSString *)tnum content:(NSString *)content{
     NSURL *url=[NSURL URLWithString:@"http://202.116.65.120/bbs/interface.php?action=reply"];
     NSMutableURLRequest *request=[NSMutableURLRequest requestWithURL:url];
     
@@ -191,46 +104,23 @@
     NSHTTPURLResponse *urlResponse=nil;
     NSError *error=[[NSError alloc] init];
     NSData *responseData=[NSURLConnection sendSynchronousRequest:request returningResponse:&urlResponse error:&error];
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-//    NSString *str=[[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
-//    NSLog(@"%@",str);
-=======
-
->>>>>>> Dev
-=======
-
->>>>>>> Dev
-=======
-
->>>>>>> Dev
-    responseData=nil;
+    if ([responseData objectFromJSONData]!=nil) {
+        return 1;
+    }
+    else{
+        return 0;
+    }
+    
+    
     
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-=======
-=======
->>>>>>> Dev
-=======
->>>>>>> Dev
 /*
     发帖函数：参数为校区，版块代号，标题，正文
     返回帖子代号（tid）
     方法：同步POST
  
  */
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> Dev
-=======
->>>>>>> Dev
-=======
->>>>>>> Dev
 -(NSString *)SchoolArea:(NSString *)area Blocks:(NSString *)block head:(NSString *)head content:(NSString *)content
 {
     NSURL *url = [NSURL URLWithString:@"http://202.116.65.120/bbs/interface.php?action=releaseThread"];
@@ -250,26 +140,4 @@
 
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-//#pragma mark- Delegate
-//-(void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response{
-//    NSLog(@"connect success");
-//    [returnData setLength:0];
-//}
-//
-//-(void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data{
-//    NSString *str1=[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-////    NSLog(@"%@",str);
-////    str1=str1;
-////    NSLog(@"%@",str);
-//}
-=======
->>>>>>> Dev
-=======
->>>>>>> Dev
-=======
->>>>>>> Dev
 @end
