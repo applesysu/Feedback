@@ -2,7 +2,7 @@
 //  ACViewController.h
 //  Feedback
 //
-//  Created by Jacob Pan on 12-9-10.
+//  Created by 晏榆 on 12-9-10.
 //  Copyright (c) 2012年 Apple Club. All rights reserved.
 //
 // test git

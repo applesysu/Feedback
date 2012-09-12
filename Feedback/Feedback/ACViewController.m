@@ -38,10 +38,27 @@
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
+- (IBAction)backgroundTap:(id)sender {
+    [tf_user resignFirstResponder];
+    [tf_password resignFirstResponder];
+}   //点击背景隐藏键盘,要讲背景view的class从uiview改成uicontrol，然后把它的touch down方法连到该函数
+- (IBAction)moveToPasswordField:(id)sender {
+    [tf_user resignFirstResponder];
+    [tf_password becomeFirstResponder];
+}  //点击done跳到下一个框，要连接textview的Did End On Exit  event到该函数
 - (IBAction)ToLogin:(id)sender {
     NSString *user=[tf_user text];
     NSString *password=[tf_password text];
     NSDictionary *returnDir=[[NSDictionary alloc] init];
+    //帐号密码没有填写
+    if(user==nil || password==nil)
+    {
+        UIAlertView *alert =[[UIAlertView alloc] initWithTitle:@"注意！" message:@"请输入帐号密码" delegate:nil cancelButtonTitle:@"取消" otherButtonTitles: nil];
+        [alert show];
+
+    }
+    else
+    {
     //进行登陆
     returnDir=[client LoginName:user LoginPass:password];
     //如果登陆成功
@@ -61,7 +78,7 @@
         [alert show];
 
     }
-        
+    }   
     
 }
 - (IBAction)ForTourist:(id)sender {

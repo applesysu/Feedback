@@ -30,12 +30,24 @@
     returnList=[[NSArray alloc] init];
     listData=[[NSMutableArray alloc] init];
     idList=[[NSMutableArray alloc] init];
+    idDir=[[NSMutableDictionary alloc]init];
     returnDir=[[NSDictionary alloc] init];
     client=[[SYSU_Client alloc] init];
     //从userdefault中取得发过的帖子的id
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    idList=[userDefaults objectForKey:@"idList"];
-    for(int i=0;i<[idList count];i++)
+    idDir=[userDefaults objectForKey:@"idDir"];
+    //取得当前用户
+    NSString *currentUser=[userDefaults stringForKey:@"user"];
+    //如果当前用户是游客，即null
+    if([currentUser isEqual:@"null"])
+    {
+        UIAlertView *alert =[[UIAlertView alloc] initWithTitle:@"注意！" message:@"你还没有登陆" delegate:nil cancelButtonTitle:@"取消" otherButtonTitles: nil];
+        [alert show];
+    }
+    else 
+    {
+        idList=[idDir valueForKey:currentUser];
+        for(int i=0;i<[idList count];i++)
         {
             NSString *tid=[idList objectAtIndex:i];
             // 发送请求取得数组
@@ -45,6 +57,7 @@
             // 再把该dir加入要显示数据的list中
             [listData addObject:returnDir];
         }
+    }
 }
 
 - (void)viewDidUnload

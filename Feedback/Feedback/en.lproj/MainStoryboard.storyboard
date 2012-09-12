@@ -32,7 +32,7 @@
                                 <rect key="frame" x="118" y="140" width="146" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                 <connections>
                                     <action selector="moveToPasswordField:" destination="2" eventType="editingDidEndOnExit" id="CiY-gd-0ck"/>
                                 </connections>
@@ -41,7 +41,7 @@
                                 <rect key="frame" x="118" y="178" width="146" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                 <connections>
                                     <action selector="ToLogin:" destination="2" eventType="editingDidEndOnExit" id="pqd-xb-29Q"/>
                                 </connections>
