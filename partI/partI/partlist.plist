@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>财务与国资管理处</key>
+	<array>
+		<dict>
+			<key>id</key>
+			<integer>167</integer>
+			<key>name</key>
+			<string>财务与国资管理处</string>
+		</dict>
+	</array>
+	<key>招生办</key>
+	<array>
+		<dict>
+			<key>id</key>
+			<integer>201</integer>
+			<key>name</key>
+			<string>招⽣生办</string>
+		</dict>
+	</array>
+	<key>大后勤</key>
+	<array>
+		<dict>
+			<key>id</key>
+			<integer>316</integer>
+			<key>name</key>
+			<string>饭堂</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>317</integer>
+			<key>name</key>
+			<string>宿舍</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>318</integer>
+			<key>name</key>
+			<string>校区间班⻋车</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>319</integer>
+			<key>name</key>
+			<string>教学楼</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<string>320</string>
+			<key>name</key>
+			<string>其他</string>
+		</dict>
+	</array>
+	<key>图书馆</key>
+	<array>
+		<dict>
+			<key>id</key>
+			<integer>328</integer>
+			<key>name</key>
+			<string>图书馆</string>
+		</dict>
+	</array>
+</dict>
+</plist>
