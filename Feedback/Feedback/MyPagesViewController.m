@@ -34,7 +34,7 @@
     client=[[SYSU_Client alloc] init];
     //从userdefault中取得发过的帖子的id
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    idList=[userDefaults objectForKey:@""];
+    idList=[userDefaults objectForKey:@"idList"];
     for(int i=0;i<[idList count];i++)
         {
             NSString *tid=[idList objectAtIndex:i];
