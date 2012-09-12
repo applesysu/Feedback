@@ -17,5 +17,6 @@
     NSDictionary *returnDir; //取得楼主帖子信息的dir
     SYSU_Client *client;
 }
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *indicator_show;
 
 @end

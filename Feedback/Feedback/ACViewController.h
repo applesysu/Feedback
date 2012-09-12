@@ -18,6 +18,7 @@
 }
 @property (weak, nonatomic) IBOutlet UITextField *tf_user;
 @property (weak, nonatomic) IBOutlet UITextField *tf_password;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *indicator_login;
 - (IBAction)ToLogin:(id)sender;
 
 //点击背景隐藏输入法

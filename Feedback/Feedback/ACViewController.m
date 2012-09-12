@@ -15,6 +15,7 @@
 @implementation ACViewController
 @synthesize tf_user;
 @synthesize tf_password;
+@synthesize indicator_login;
 
 - (void)viewDidLoad
 {
@@ -23,12 +24,16 @@
     //初始化
     client=[[SYSU_Client alloc] init];
     userDefaults = [NSUserDefaults standardUserDefaults];
+ 
+    //先把indicator隐藏
+    [indicator_login setHidden:YES];
 }
 
 - (void)viewDidUnload
 {
     [self setTf_user:nil];
     [self setTf_password:nil];
+    [self setIndicator_login:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -51,7 +56,7 @@
     NSString *password=[tf_password text];
     NSDictionary *returnDir=[[NSDictionary alloc] init];
     //帐号密码没有填写
-    if(user==nil || password==nil)
+    if([user isEqual:@""] || [password isEqual:@""])
     {
         UIAlertView *alert =[[UIAlertView alloc] initWithTitle:@"注意！" message:@"请输入帐号密码" delegate:nil cancelButtonTitle:@"取消" otherButtonTitles: nil];
         [alert show];
@@ -59,26 +64,32 @@
     }
     else
     {
-    //进行登陆
-    returnDir=[client LoginName:user LoginPass:password];
-    //如果登陆成功
-    if(returnDir!=nil)
-    {
+        //show indicator
+        [indicator_login setHidden:NO];
+        [indicator_login startAnimating];
+        //进行登陆
+        returnDir=[client LoginName:user LoginPass:password];
+        //如果登陆成功
+        if(returnDir!=nil)
+        {
         //把当前用户名保存
         [userDefaults setValue:user forKey:@"user"];
         //跳转
         [self performSegueWithIdentifier:@"toLogin" sender:self];
-    }
-    else
-    {
+        }
+        else
+        {
         //null表示当前没有登陆
         [userDefaults setValue:@"null" forKey:@"user"];
         //提示框
         UIAlertView *alert =[[UIAlertView alloc] initWithTitle:@"注意！" message:@"登陆失败" delegate:nil cancelButtonTitle:@"取消" otherButtonTitles: nil];
         [alert show];
 
+        }
+        //close indicator
+        [indicator_login stopAnimating];
+        [indicator_login setHidden:YES];
     }
-    }   
     
 }
 - (IBAction)ForTourist:(id)sender {

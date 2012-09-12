@@ -76,6 +76,10 @@
                                     <action selector="ForTourist:" destination="2" eventType="touchUpInside" id="13E-lF-zoZ"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" style="gray" id="5EX-ee-Twc">
+                                <rect key="frame" x="141" y="247" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <connections>
@@ -83,6 +87,7 @@
                         </connections>
                     </view>
                     <connections>
+                        <outlet property="indicator_login" destination="5EX-ee-Twc" id="4u3-Pz-WiN"/>
                         <outlet property="tf_password" destination="CWg-Xz-Hb5" id="xaB-gd-ljA"/>
                         <outlet property="tf_user" destination="8ng-Ll-kPe" id="g6v-zr-nQf"/>
                         <segue destination="tD3-Ph-x8q" kind="modal" identifier="toLogin" id="hkl-zd-LR0"/>
@@ -170,6 +175,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="367"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <activityIndicatorView key="tableFooterView" opaque="NO" contentMode="scaleToFill" style="gray" id="7V5-C8-aTq">
+                                    <rect key="frame" x="0.0" y="88" width="320" height="20"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </activityIndicatorView>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="MyCell" rowHeight="66" id="SGZ-EC-Mxu">
                                         <rect key="frame" x="0.0" y="22" width="320" height="66"/>
@@ -220,6 +229,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="我的帖子" id="e5W-Bu-l13"/>
+                    <connections>
+                        <outlet property="indicator_show" destination="7V5-C8-aTq" id="ILW-GS-f2Y"/>
+                    </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="1515" y="86"/>
@@ -233,12 +245,16 @@
                 <relationship kind="action" name="ToLogin:"/>
                 <relationship kind="action" name="backgroundTap:"/>
                 <relationship kind="action" name="moveToPasswordField:"/>
+                <relationship kind="outlet" name="indicator_login" candidateClass="UIActivityIndicatorView"/>
                 <relationship kind="outlet" name="tf_password" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="tf_user" candidateClass="UITextField"/>
             </relationships>
         </class>
         <class className="MyPagesViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MyPagesViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="indicator_show" candidateClass="UIActivityIndicatorView"/>
+            </relationships>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

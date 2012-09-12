@@ -13,6 +13,7 @@
 @end
 
 @implementation MyPagesViewController
+@synthesize indicator_show;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -33,6 +34,7 @@
     idDir=[[NSMutableDictionary alloc]init];
     returnDir=[[NSDictionary alloc] init];
     client=[[SYSU_Client alloc] init];
+    [indicator_show setHidden:YES];
     //从userdefault中取得发过的帖子的id
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     idDir=[userDefaults objectForKey:@"idDir"];
@@ -46,6 +48,7 @@
     }
     else 
     {
+        [indicator_show startAnimating];
         idList=[idDir valueForKey:currentUser];
         for(int i=0;i<[idList count];i++)
         {
@@ -57,11 +60,14 @@
             // 再把该dir加入要显示数据的list中
             [listData addObject:returnDir];
         }
+        [indicator_show stopAnimating];
+        [indicator_show setHidden:YES];
     }
 }
 
 - (void)viewDidUnload
 {
+    [self setIndicator_show:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
