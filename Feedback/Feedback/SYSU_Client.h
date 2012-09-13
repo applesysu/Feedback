@@ -18,7 +18,7 @@
 
 -(NSDictionary *)LoginName:(NSString *)name LoginPass:(NSString *)password;
 -(NSArray *)FidNum:(NSString *)num Page:(NSString *)page NumPerPage:(NSString *)numPerPage;
--(NSArray *)TidNum:(NSString *)num;
--(void)FidNum:(NSString *)num TidNum:(NSString *)tnum content:(NSString *)content;
+-(NSArray *)TidNum:(NSString *)num fidForUrl:(NSString *)fid;
+-(NSInteger)FidNum:(NSString *)num TidNum:(NSString *)tnum content:(NSString *)content;
 -(NSString *)SchoolArea:(NSString *)area Blocks:(NSString *)block  head:(NSString *)head content:(NSString *)content;
 @end

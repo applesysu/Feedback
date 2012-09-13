@@ -8,6 +8,7 @@
 
 #import "SYSU_Client.h"
 #import "JSONkit.h"
+#import "SYSU_Chardeal.h"
 
 @implementation SYSU_Client
 
@@ -70,7 +71,7 @@
     返回Dictionary组成的Array,提供楼主相关信息及回复信息，具体内容请参看文档或自己试验
     方法：同步POST
  */
--(NSArray *)TidNum:(NSString *)num{
+-(NSArray *)TidNum:(NSString *)num fidForUrl:(NSString *)fid{
     NSURL *url=[NSURL URLWithString:@"http://202.116.65.120/bbs/interface.php?action=viewThread"];
     NSMutableURLRequest *request=[NSMutableURLRequest requestWithURL:url];
     
@@ -80,21 +81,19 @@
     NSHTTPURLResponse *urlResponse=nil;
     NSError *error=[[NSError alloc] init];
     NSData *responseData=[NSURLConnection sendSynchronousRequest:request returningResponse:&urlResponse error:&error];
-    NSMutableString *str=[[NSMutableString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
-    [str deleteCharactersInRange:[str rangeOfString:@"\n\n\n\n"]];
-    NSRange  range=NSMakeRange(0, [str length]);
-    [str replaceOccurrencesOfString:@"\r\n" withString:@"" options:NSLiteralSearch range:range];
-    responseData=[str dataUsingEncoding:NSUTF8StringEncoding];
-        NSArray *returnArray=[responseData mutableObjectFromJSONData];
+    responseData=[[[SYSU_Chardeal alloc] init] DealWithChar:responseData getFid:fid];
+    
+    NSArray *returnArray=[responseData mutableObjectFromJSONData];
+    NSLog(@"%d",returnArray.count);
     return returnArray;
 }
 /*
     回帖函数：参数为版块代号，帖子代号，回帖内容
-    返回-1，代表回帖失败，返回其它正值代表成功
+    返回0，代表回帖失败，返回1,代表成功
     方法：同步POST
  */
 
--(void)FidNum:(NSString *)num TidNum:(NSString *)tnum content:(NSString *)content{
+-(NSInteger)FidNum:(NSString *)num TidNum:(NSString *)tnum content:(NSString *)content{
     NSURL *url=[NSURL URLWithString:@"http://202.116.65.120/bbs/interface.php?action=reply"];
     NSMutableURLRequest *request=[NSMutableURLRequest requestWithURL:url];
     
@@ -105,8 +104,14 @@
     NSHTTPURLResponse *urlResponse=nil;
     NSError *error=[[NSError alloc] init];
     NSData *responseData=[NSURLConnection sendSynchronousRequest:request returningResponse:&urlResponse error:&error];
-
-    responseData=nil;
+    if ([responseData objectFromJSONData]!=nil) {
+        return 1;
+    }
+    else{
+        return 0;
+    }
+    
+    
     
 }
 
